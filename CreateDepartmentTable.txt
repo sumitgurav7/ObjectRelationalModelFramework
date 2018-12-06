@@ -1,0 +1,6 @@
+CREATE TABLE [dbo].[Department] (
+    [Dept_Id]         INT         IDENTITY (1, 1) NOT NULL,
+    [Department_Name] NCHAR (100) NULL,
+    CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED ([Dept_Id] ASC)
+);
+

@@ -10,6 +10,16 @@ namespace ObjectRelationalModelFramework
     {
         static void Main(string[] args)
         {
+
+            BookLibraryDataContext bookLibraryData = new BookLibraryDataContext();
+
+            IEnumerable<bookdata> bookdatas = bookLibraryData.bookdatas.Where(book => book.Title.Contains("India"));
+
+            foreach(bookdata book in bookdatas)
+            {
+                Console.WriteLine(book);
+            }
+
         }
     }
 }

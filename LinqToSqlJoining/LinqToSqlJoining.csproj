@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{377753F1-A292-4992-AFD5-D8B028ABA512}</ProjectGuid>
+    <ProjectGuid>{B581C6F1-5A01-45CE-B7AA-626F01EB44EA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ObjectRelationalModelFramework</RootNamespace>
-    <AssemblyName>ObjectRelationalModelFramework</AssemblyName>
+    <RootNamespace>LinqToSqlJoining</RootNamespace>
+    <AssemblyName>LinqToSqlJoining</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,11 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookLibrary.designer.cs">
+    <Compile Include="College.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookLibrary.dbml</DependentUpon>
+      <DependentUpon>College.dbml</DependentUpon>
     </Compile>
+    <Compile Include="CollegeDbConnect.cs" />
+    <Compile Include="CollegeService.cs" />
+    <Compile Include="DepartmentInfo.cs" />
+    <Compile Include="Extension\ExtendingMethods.cs" />
+    <Compile Include="Interface\IAllDepartments.cs" />
+    <Compile Include="Interface\IAllStudent.cs" />
+    <Compile Include="Interface\ICrudDepartment.cs" />
+    <Compile Include="Interface\ICrudStudent.cs" />
+    <Compile Include="Interface\IStudentAndDepartment.cs" />
+    <Compile Include="JoinedStudentDepartments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -56,12 +66,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="StudentInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="BookLibrary.dbml">
+    <None Include="College.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>BookLibrary.designer.cs</LastGenOutput>
+      <LastGenOutput>College.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -73,8 +84,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BookLibrary.dbml.layout">
-      <DependentUpon>BookLibrary.dbml</DependentUpon>
+    <None Include="College.dbml.layout">
+      <DependentUpon>College.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
